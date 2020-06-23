@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 
 class Button extends React.Component {
     render () {
-        const {symbol} = this.props.buttonProp
+        const {symbol} = useState(symbol)
         return (
             <div className="button-wrapper">
                 <button>{symbol}</button>

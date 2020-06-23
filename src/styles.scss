@@ -1,5 +1,6 @@
-@import './components/Button/Button.scss';
-@import './components/Screen/Screen.scss';
+@import './ui/atoms/Button/Button.scss';
+@import './ui/atoms/Screen/Screen.scss';
+@import './ui/organisms/Calculator/calculator.scss';
 
 
 body, html {

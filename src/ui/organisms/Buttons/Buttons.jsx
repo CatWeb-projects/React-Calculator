@@ -89,10 +89,11 @@ const getButtons = [
 // }
 
 const Buttons = (props) => {
-    const [symbol ] = useState(props)
-    return (
-        <Button />
-    )
+    const [buttonItem, setButtons ] = useState(getButtons)
+
+    return getButtons.map((button) =>{
+        <Button updateButtons={button}/>
+    })
 }
 
 export default Buttons

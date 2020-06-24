@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Button from '../../atoms/Button/Button'
 
 const getButtons = [
@@ -83,17 +83,20 @@ const getButtons = [
 // class Buttons extends React.Component {
 //     render() {
 //         return this.state.getButtons.map((button) => (
-//             <Button key={button.id} buttonProp={button} onClick={this.handleClick} value={this.state.symbol}/>
+//             <Button key={button.id} symbolProp={button} onClick={this.handleClick} value={this.state.symbol}/>
 //         ))
 //     }
 // }
 
-const Buttons = (props) => {
-    const [buttonItem, setButtons ] = useState(getButtons)
+const Buttons = () => {
+    
+    // const [buttonItem, setButtonItem] = useState(getButtons)
 
-    return getButtons.map((button) =>{
-        <Button updateButtons={button}/>
+    return getButtons.map((item) => {
+        return <Button key={item.id} buttonProp={item} />
+        console.log(item.symbol)
     })
 }
+
 
 export default Buttons

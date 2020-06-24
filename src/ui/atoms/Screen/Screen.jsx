@@ -1,9 +1,18 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+import handleClick from '../Button/Button'
 
  const Screen = () => {
-    const [count, setCount] = useState(0)
-    return <div className="screen">
-        {count}
+    const [value, setValue] = useState(0)
+    const [clear,setClear]=useState(false);
+    useEffect(()=>{
+        document.querySelector('.screen').value="";
+      },[])
+      useEffect(()=>{
+        if(clear)
+        document.querySelector('.screen').value="";
+      })
+    return <div className="screen" onChange={handleClick}>
+        {value}
     </div>
 }
 

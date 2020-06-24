@@ -19,6 +19,9 @@
 .button-wrapper:nth-child(4n) button {
     background-color: #dfa612;
 }
+.button-wrapper:nth-child(-n + 3) button {
+	background-color: #343434;
+}
 .button-wrapper:nth-child(17) {
 	grid-column-start: 1;
 	grid-column-end: 3;

@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 
 const Screen = props => {
 
-    return <div className="screen" onChange={props.operations}>
+    return <div className="screen" onChange={props.clickButton}>
         {props.valueProp}
     </div>
 }

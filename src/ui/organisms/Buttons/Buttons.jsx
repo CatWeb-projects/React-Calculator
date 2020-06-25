@@ -82,7 +82,7 @@ const getButtons = [
 
 const Buttons = props => {
 	return getButtons.map((item) => {
-		return <Button key={item.id} buttonProp={item} clickButton={props.clickButton} operations={props.operations}/>
+		return <Button key={item.id} buttonProp={item} clickButton={props.clickButton}/>
 	})
 }
 

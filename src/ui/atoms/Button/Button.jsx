@@ -2,11 +2,10 @@ import React from 'react'
 
 
 const Button = props => {
-    const {symbol, clickButton} = props.buttonProp
-
+    const {symbol} = props.buttonProp
     return (
         <div className="button-wrapper">
-            <button value={symbol} onClick={clickButton}>{symbol}</button>
+            <button value={symbol} onClick={props.clickButton}>{symbol}</button>
         </div>
     )
 }

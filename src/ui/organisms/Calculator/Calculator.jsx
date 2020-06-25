@@ -4,26 +4,29 @@ import Buttons from '../Buttons/Buttons';
 
 const Calculator = () => {
 
-  // const handleClick = (e) => {
-  //   e.preventDefault();
-  //   const { name, value } = e.target;
-  //   this.setState({ [name]: value });
-  //   console.log(e.currentTarget.value);
-  // }
+  const [value, setValue] = useState(0)
+  const [clear,setClear] = useState(false);
 
-  // const [buttonState, buttonClick] = useState()
+  /* Calculator operations */
+  const add = (a, b) => a + b
+  const subtract = (a, b) => a - b
+  const multiply = (a, b) => a * b
+  const divide = (a, b) => a / b
 
-  // const handleClick = () => {
-  //   console.log('1')
-  // }
+  const handleClick = (e) => {
+    e.preventDefault();
+    const {value} = e.target
+    setValue(value)
+    console.log(value);
+  }
 
   return (
       <div className="calc-wrapper">
         <div className="screen-wrapper">
-          <Screen />
+          <Screen value={value} onChange={e=> setValue(e.target.value)}/>
         </div>
         <div className="each-button">
-          <Buttons />
+          <Buttons clickButton={handleClick}/>
         </div>
       </div>
   )

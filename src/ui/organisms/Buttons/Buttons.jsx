@@ -80,9 +80,9 @@ const getButtons = [
 	}
 ]
 
-const Buttons = () => {
+const Buttons = clickButton => {
 	return getButtons.map((item) => {
-		return <Button key={item.id} buttonProp={item}/>
+		return <Button key={item.id} buttonProp={item} clickButton={clickButton}/>
 	})
 }
 

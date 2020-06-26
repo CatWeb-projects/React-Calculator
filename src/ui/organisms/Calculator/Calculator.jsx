@@ -1,31 +1,30 @@
 import React, {useState} from 'react'
 import Screen from '../../atoms/Screen/Screen';
 import Buttons from '../Buttons/Buttons';
+import getButtons from '../Buttons/Buttons'
 
 const Calculator = () => {
 
-  const [value, setValue] = useState('0')
+  const [value, setValue] = useState('')
   const [total, setTotal] = useState('')
-  const [operand, setOperand] = useState('')
-
+  const [currentValue, setCurrentValue] = useState('0')
+  
   const handleClick = (e) => {
     e.preventDefault();
     const {value} = e.target
-    setValue(value);
+    const newValue = currentValue + value
+    setCurrentValue(newValue)
     if(value === 'AC') {
-      setValue('0')
-      setTotal('')
-      setOperand('')
-    } else if (value === '=') {
-      let result = eval(total + operand)
-      setTotal(result + value)
-      console.log(result)
+      setCurrentValue('')
+    } else if (getButtons.operators == true) {
+      let result = eval(currentValue + e.target.value)
+      setCurrentValue(result)
+      // console.log(result)
     } else {
       setTotal(value)
     }
-    console.log(total)
-    
-    console.log(value);
+    // console.log(total)
+    console.log(newValue);
   }
 
   // const compute = (item) =>{
@@ -43,7 +42,7 @@ const Calculator = () => {
       <div className="calc-wrapper">
         <div className="screen-wrapper">
           <input type="text" value={total} onChange={handleClick}/>
-          <Screen valueProp={value} clickButton={handleClick}/>
+          <Screen valueProp={currentValue} clickButton={handleClick}/>
         </div>
         <div className="each-button">
           <Buttons clickButton={handleClick}/>

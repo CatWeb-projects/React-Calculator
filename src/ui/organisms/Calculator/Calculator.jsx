@@ -1,31 +1,36 @@
 import React, {useState} from 'react'
 import Screen from '../../atoms/Screen/Screen';
 import Buttons from '../Buttons/Buttons';
-import getButtons from '../Buttons/Buttons'
 
 const Calculator = () => {
 
   const [value, setValue] = useState('')
-  const [total, setTotal] = useState('')
-  const [currentValue, setCurrentValue] = useState('0')
-  
-  const handleClick = (e) => {
+  const [currentValue, setCurrentValue] = useState('')
+
+  const handleClick = (e, key) => {
     e.preventDefault();
     const {value} = e.target
+      if (currentValue[currentValue.length -1 ]=== value) return 0
+
+
     const newValue = currentValue + value
     setCurrentValue(newValue)
-    if(value === 'AC') {
-      setCurrentValue('')
-    } else if (getButtons.operators == true) {
-      let result = eval(currentValue + e.target.value)
+    if(['+', '-', '*', '/', '.'].includes(newValue[newValue.length -1])) {
+      // setCurrentValue(currentValue[currentValue.length - 1] + newValue[newValue.length -1] )
+        
+        
+      
+    } else if (value == '=') {
+      let result = eval(currentValue)
       setCurrentValue(result)
-      // console.log(result)
-    } else {
-      setTotal(value)
+      console.log(result)
+      console.log(currentValue)
+    }  else {
+      value === 'AC' ? setCurrentValue('') : setCurrentValue(newValue)
     }
-    // console.log(total)
     console.log(newValue);
   }
+
 
   // const compute = (item) =>{
   //   if(item === 'AC') {
@@ -41,7 +46,6 @@ const Calculator = () => {
   return (
       <div className="calc-wrapper">
         <div className="screen-wrapper">
-          <input type="text" value={total} onChange={handleClick}/>
           <Screen valueProp={currentValue} clickButton={handleClick}/>
         </div>
         <div className="each-button">

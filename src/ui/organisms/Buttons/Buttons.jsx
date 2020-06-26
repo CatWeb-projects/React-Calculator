@@ -4,23 +4,19 @@ import Button from '../../atoms/Button/Button'
 const getButtons = [
 	{
         id: 1,
-        symbol: 'AC',
-        operator: true
+        symbol: 'AC'
 	},
 	{
         id: 2,
-        symbol: '+/-',
-        operator: true
+        symbol: '+/-'
 	},
 	{
         id: 3,
-        symbol: '%',
-        operator: true
+        symbol: '%'
 	},
 	{
         id: 4,
-        symbol: '/',
-        operator: true
+        symbol: '/'
 	},
 	{
         id: 5,
@@ -36,8 +32,7 @@ const getButtons = [
 	},
 	{
         id: 8,
-        symbol: 'x',
-        operator: true
+        symbol: '*'
 	},
 	{
         id: 9,
@@ -53,8 +48,7 @@ const getButtons = [
 	},
 	{
         id: 12,
-        symbol: '-',
-        operator: true
+        symbol: '-'
 	},
 	{
         id: 13,
@@ -70,8 +64,7 @@ const getButtons = [
 	},
 	{
         id: 16,
-        symbol: '+',
-        operator: true
+        symbol: '+'
 	},
 	{
         id: 17,
@@ -79,13 +72,11 @@ const getButtons = [
 	},
 	{
         id: 18,
-        symbol: '.',
-        operator: true
+        symbol: '.'
 	},
 	{
 		id: 19,
-        symbol: '=',
-        operator: true
+        symbol: '='
 	}
 ]
 

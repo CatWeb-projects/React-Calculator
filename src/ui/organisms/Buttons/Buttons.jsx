@@ -4,7 +4,7 @@ import Button from '../../atoms/Button/Button'
 const getButtons = [
 	{
         id: 1,
-        symbol: 'AC'
+		symbol: 'AC'
 	},
 	{
         id: 2,

@@ -1,6 +1,5 @@
 import React from 'react'
 
-
 const Button = props => {
 	const {symbol} = props.buttonProp
 	return (

@@ -80,10 +80,10 @@ const getButtons = [
 	}
 ]
 
-const Buttons = props => {
-	return getButtons.map((item) => {
+const Buttons = props =>
+	getButtons.map((item) => {
 		return <Button key={item.id} buttonProp={item} clickButton={props.clickButton}/>
 	})
-}
+
 
 export default Buttons

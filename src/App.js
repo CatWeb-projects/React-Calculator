@@ -1,7 +1,6 @@
 import React from 'react';
-import './App.scss';
-import './styles.scss';
 import Calculator from './ui/organisms/Calculator/Calculator';
+import './styles.scss';
 
 const App = () => {
   return (

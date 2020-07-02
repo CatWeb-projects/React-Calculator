@@ -25,12 +25,17 @@ const Calculator = () => {
       setCurrentValue(check)
     }
     } else if (value === '=') {  
-      // eslint-ignore-next-line
-      let result = eval(currentValue)
-      setCurrentValue(result)
-    }  else if(value === 'AC') {
+      if(operators.includes(currentValue[currentValue.length - 1]) && value === '=') {
+        let checkEqual = newValue.substring(0, newValue.length - 2) + currentValue[currentValue.length - 1]
+        setCurrentValue(checkEqual)
+      } else {
+        // eslint-ignore-next-line
+        let result = eval(currentValue)
+        setCurrentValue(result)
+      }
+    } else if(value === 'AC') {
       setCurrentValue('')
-    }  else setCurrentValue(newValue)
+    } else setCurrentValue(newValue)
   }
 
   return (

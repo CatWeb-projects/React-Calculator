@@ -9,7 +9,6 @@ const Calculator = () => {
   const operators = ['+', '-', '*', '/', '.']
   const {value} = e.target
   const newValue = currentValue + value
-
   if(e.target.value === '<') {
     let back = newValue.substring(0, newValue.length - 2)
     return setCurrentValue(back)
@@ -22,7 +21,7 @@ const Calculator = () => {
         return newValue[newValue.length - 1]
       } else setCurrentValue(conc + newValue[newValue.length - 1])
     } else {
-      let check = currentValue.substring(0, currentValue.length - 1)
+      let check = currentValue.substring(0, currentValue.length - 1) + value
       setCurrentValue(check)
     }
     } else if (value === '=') {  

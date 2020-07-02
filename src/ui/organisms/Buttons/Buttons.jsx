@@ -1,5 +1,5 @@
 import React from 'react'
-import Button from '../../atoms/Button/Button'
+import {Button} from '../../atoms/Button/Button'
 
 const getButtons = [
 	{
@@ -76,10 +76,7 @@ const getButtons = [
 	}
 ]
 
-const Buttons = props =>
-	getButtons.map((item) => {
-		return <Button key={item.id} buttonProp={item} clickButton={props.clickButton}/>
-	})
-
-
-export default Buttons
+export const Buttons = props => 
+	getButtons.map((item) => 
+		<Button key={item.id} buttonProp={item} clickButton={props.clickButton}/>
+	)

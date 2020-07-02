@@ -1,5 +1,5 @@
 import React from 'react';
-import Calculator from './ui/organisms/Calculator/Calculator';
+import { Calculator } from './ui/organisms/Calculator/Calculator';
 import './styles.scss';
 
 const App = () => {

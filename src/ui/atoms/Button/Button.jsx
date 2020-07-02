@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Button = props => {
+export const Button = props => {
 	const {symbol} = props.buttonProp
 	return (
 		<div className="button-wrapper">
@@ -8,5 +8,3 @@ const Button = props => {
 		</div>
 	)
 }
-
-export default Button

@@ -1,8 +1,8 @@
 import React, {useState} from 'react'
-import Screen from '../../atoms/Screen/Screen';
-import Buttons from '../Buttons/Buttons';
+import {Screen} from '../../atoms/Screen/Screen';
+import {Buttons} from '../Buttons/Buttons';
 
-const Calculator = () => {
+export const Calculator = () => {
   const [currentValue, setCurrentValue] = useState('')
   const handleClick = (e) => {
   e.preventDefault();
@@ -49,5 +49,3 @@ const Calculator = () => {
     </div>
   )
 }
-
-export default Calculator

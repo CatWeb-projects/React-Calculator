@@ -6,16 +6,21 @@ const Calculator = () => {
   const [currentValue, setCurrentValue] = useState('')
   const handleClick = (e) => {
   e.preventDefault();
-  const operators = ['+', '-', '*', '/', '.', '%']
+  const operators = ['+', '-', '*', '/', '.']
   const {value} = e.target
   const newValue = currentValue + value
-  setCurrentValue(newValue)
+
+  if(e.target.value === '<') {
+    let back = newValue.substring(0, newValue.length - 2)
+    return setCurrentValue(back)
+  }
   if(operators.includes(newValue[newValue.length - 1])) {
     if(!operators.includes(currentValue[currentValue.length - 1])) {
       // eslint-ignore-next-line
       let conc = eval(currentValue)
-      operators.includes(newValue) ? newValue[newValue.length - 1] :
-      setCurrentValue(conc + newValue[newValue.length - 1])
+      if(operators.includes(newValue)) {
+        return newValue[newValue.length - 1]
+      } else setCurrentValue(conc + newValue[newValue.length - 1])
     } else {
       let check = currentValue.substring(0, currentValue.length - 1)
       setCurrentValue(check)

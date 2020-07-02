@@ -17,7 +17,7 @@
 	cursor: pointer;
 }
 .button-wrapper:nth-child(4n) button {
-    background-color: #dfa612;
+	background-color: #dfa612;
 }
 .button-wrapper:nth-child(-n + 3) button {
 	background-color: #343434;
@@ -27,4 +27,13 @@
 	grid-column-end: 3;
 	grid-row-start: 5;
 	grid-row-end: 6;
+}
+.button-wrapper:nth-child(18) {
+	grid-column-start: 3;
+	grid-column-end: 5;
+	grid-row-start: 5;
+	grid-row-end: 6;
+	button {
+		background-color: #dfa612;
+	}
 }

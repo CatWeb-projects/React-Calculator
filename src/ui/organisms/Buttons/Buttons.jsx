@@ -8,11 +8,11 @@ const getButtons = [
 	},
 	{
     id: 2,
-    symbol: '+/-'
+    symbol: '<'
 	},
 	{
     id: 3,
-    symbol: '%'
+    symbol: '.'
 	},
 	{
     id: 4,
@@ -71,11 +71,7 @@ const getButtons = [
     symbol: '0'
 	},
 	{
-    id: 18,
-    symbol: '.'
-	},
-	{
-		id: 19,
+		id: 18,
     symbol: '='
 	}
 ]
